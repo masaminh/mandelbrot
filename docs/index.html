@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Mandelbrot set</title>
+
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+        crossorigin=""></script>
+
+
+
+</head>
+
+<body>
+
+    <div id="map" style="width: 600px; height: 400px;"></div>
+    <script>
+
+        var mymap = L.map('map', {
+            crs: L.CRS.Simple
+        });
+        mymap.setView(L.latLng(-256 / 2, 256 / 2), 0);
+        L.tileLayer('https://masaminh.github.io/mandelbrot/tile/grayscale/{z}/{x}/{y}.png', {
+            maxZoom: 6
+        }).addTo(mymap);
+
+
+    </script>
+
+
+
+</body>
+
+</html>
